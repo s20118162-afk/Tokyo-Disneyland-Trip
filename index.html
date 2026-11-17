@@ -39,12 +39,32 @@ label.ck{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-botto
 label.ck input{margin-top:5px;accent-color:var(--ac)}
 label.ck input:checked+span{text-decoration:line-through;color:var(--mu)}
 footer{color:var(--mu);font-size:.8rem;text-align:center;margin-top:30px}
+body{transition:background .6s,color .6s;background-attachment:fixed}
+.wrap{position:relative;z-index:1}
+#fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+#fx span{position:absolute}
+#fx .lf{top:-10%;opacity:.75;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(115vh) rotate(360deg)}}
+#fx .tw{animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}
+@media(prefers-reduced-motion:reduce){#fx{display:none}}
+body:not(.disney){background:linear-gradient(180deg,var(--bg),var(--ac2) 140%)}
+body.disney{--bg:#14194a;--card:#1f2766;--tx:#fff7e0;--mu:#b8c0ff;--ac:#ffd34d;--ac2:#34429e;--bd:#3d4aa8;background:linear-gradient(180deg,#0f1450,#2a2f8f 60%,#5a3fa3)}
+body.disney nav a.on{color:#14194a}
+body.disney h1,body.disney #d3 h2{text-shadow:0 0 14px rgba(255,211,77,.55)}
+body.disney .card,body.disney .tl li .d{color:var(--tx)}
+body.d1{--bg:#e6f3ff;--card:#fff;--tx:#1f2d3d;--mu:#5d7186;--ac:#1c7ed6;--ac2:#d3e9fb;--bd:#c5ddf2;background:linear-gradient(180deg,#a9d8ff,#f4faff 55%,#ffe3d0)}
+body.d4{--bg:#fff3e0;--card:#fffaf2;--tx:#3b2a1a;--mu:#8a6d4f;--ac:#d9792b;--ac2:#fbe0bd;--bd:#f0d3a8;background:linear-gradient(180deg,#ffd29a,#fff3e0 50%,#ffc4a3)}
+#fx .fly{left:-12%;opacity:.85;animation:fly linear infinite}
+@keyframes fly{to{transform:translateX(125vw)}}
+body.tips{--bg:#e8f6f1;--card:#fff;--tx:#1d3a33;--mu:#5b7f75;--ac:#1f9d7a;--ac2:#d2efe5;--bd:#bfe3d6;background:linear-gradient(180deg,#c9ecdf,#f2fbf7 55%,#fff4d6)}
 </style>
 </head>
 <body>
+<div id="fx" aria-hidden="true"></div>
 <div class="wrap">
 <header>
-<small>TOKYO · 2026.11.27 – 11.30</small>
+<small>🍁 TOKYO · 2026.11.27 – 11.30 🍁</small>
 <h1>東京四天三夜自由行手冊</h1>
 <p>4 Days 3 Nights ・ 晚秋初冬 6°C – 15°C ・ 住東京灣東方飯店</p>
 </header>
@@ -61,7 +81,7 @@ footer{color:var(--mu);font-size:.8rem;text-align:center;margin-top:30px}
 </nav>
 
 <section class="sec" id="d1">
-<h2>Day 1 · 11/27（五）抵達東京</h2><p class="sub">新浦安周邊採買</p>
+<h2>✈️ Day 1 · 11/27（五）搞機抵達東京 🗾</h2><p class="sub">新浦安周邊採買</p>
 <ul class="tl">
 <li><span class="t">10:40–14:55</span><b>桃園 ➔ 成田機場</b></li>
 <li><span class="t">15:00–16:00</span><b>入境通關、領行李</b><span class="d">事先完成 Visit Japan Web QR Code，並購買利木津巴士車票。</span></li>
@@ -71,7 +91,7 @@ footer{color:var(--mu);font-size:.8rem;text-align:center;margin-top:30px}
 </ul></section>
 
 <section class="sec" id="d2">
-<h2>Day 2 · 11/28（六）淺草 ➔ 銀座 ➔ 日比谷 ➔ 丸之內</h2><p class="sub">全程使用 Suica / PASMO，由北向南單向推進，零回頭路。</p>
+<h2>🍁 Day 2 · 11/28（六）淺草 ➔ 銀座 ➔ 日比谷 ➔ 丸之內</h2><p class="sub">全程使用 Suica / PASMO，由北向南單向推進，零回頭路。</p>
 <ul class="tl">
 <li><span class="t">08:50–09:50</span><b>飯店出發前往淺草</b><span class="d">約 45–55 分鐘，約 ¥490。JR 新浦安站（京葉線）➔ 八丁堀（轉日比谷線）➔ 上野（轉銀座線）➔ 淺草站 1 或 2 號出口。</span></li>
 <li><span class="t">10:00–13:30</span><b>ookini 和服租借（淺草雷門店）</b><span class="d">淺草 1-16-11 2F–3F，營業 08:30–18:00，距 1 號出口步行約 3 分鐘。10:00 報到挑和服、盤髮（45–60 分鐘）➔ 雷門、仲見世通（禁止邊走邊吃）、淺草寺、五重塔拍照 ➔ <b style="display:inline">13:30 準時歸還</b>。</span></li>
@@ -84,7 +104,7 @@ footer{color:var(--mu);font-size:.8rem;text-align:center;margin-top:30px}
 </ul></section>
 
 <section class="sec" id="d3">
-<h2>Day 3 · 11/29（日）東京迪士尼樂園</h2><p class="sub">表定 09:00–21:00（常於 08:15–08:30 提早開放入園）；煙火 20:30，視風速而定。</p>
+<h2>🏰 Day 3 · 11/29（日）東京迪士尼樂園 ✨</h2><p class="sub">表定 09:00–21:00（常於 08:15–08:30 提早開放入園）；煙火 20:30，視風速而定。</p>
 <ul class="tl">
 <li><span class="t">07:15–07:45</span><b>搭飯店免費接駁巴士</b><span class="d">提早 10 分鐘排隊，車程約 15 分鐘。</span></li>
 <li><span class="t">08:15–08:30</span><b>入園安檢 ＆ 黃金 3 分鐘 App 操作</b><span class="d">
@@ -99,7 +119,7 @@ footer{color:var(--mu);font-size:.8rem;text-align:center;margin-top:30px}
 </ul></section>
 
 <section class="sec" id="d4">
-<h2>Day 4 · 11/30（一）退房 ➔ 返台</h2><p class="sub">記得前一晚確認利木津巴士預約。</p>
+<h2>🛍️ Day 4 · 11/30（一）退房 ➔ 滿載而歸 ✈️</h2><p class="sub">記得前一晚確認利木津巴士預約，帶著滿滿的回憶與戰利品回家 🎁</p>
 <ul class="tl">
 <li><span class="t">07:30–08:15</span><b>飯店早餐、整理行李、退房</b></li>
 <li><span class="t">08:30–09:45</span><b>搭已預約的利木津巴士前往成田</b><span class="d">約 60–75 分鐘。</span></li>
@@ -108,7 +128,7 @@ footer{color:var(--mu);font-size:.8rem;text-align:center;margin-top:30px}
 </ul></section>
 
 <section class="sec" id="tips">
-<h2>行前檢查與貼士</h2><p class="sub">勾選狀態會記在這支手機／瀏覽器上。</p>
+<h2>🧳 行前檢查與貼士 ✅</h2><p class="sub">勾選狀態會記在這支手機／瀏覽器上。</p>
 <div class="card"><h3>必備 App</h3>
 <label class="ck"><input type="checkbox" data-k="a1"><span>Tokyo Disney Resort App（先註冊並綁定信用卡）</span></label>
 <label class="ck"><input type="checkbox" data-k="a2"><span>Suica / Apple Pay / Google Pay 儲值</span></label>
@@ -130,12 +150,57 @@ footer{color:var(--mu);font-size:.8rem;text-align:center;margin-top:30px}
 <script>
 (function(){
 var ids=["d1","d2","d3","d4","tips"];
-function show(){
-  var h=(location.hash||"").slice(1);
+function show(x){
+  var h=typeof x==="string"?x:(location.hash||"").slice(1);
   if(ids.indexOf(h)<0)h="d1";
   ids.forEach(function(i){document.getElementById(i).classList.toggle("on",i===h)});
+  setTheme(h);
   document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+h)});
 }
+var fx=document.getElementById("fx"),cur=null;
+function setFx(d){
+  if(cur===d)return;cur=d;
+  document.body.classList.toggle("disney",d);
+  fx.innerHTML="";
+  var s=d?["✨","⭐","💫"]:["🍁","🍂","🍁"];
+  for(var i=0;i<18;i++){
+    var e=document.createElement("span");
+    e.textContent=s[i%s.length];
+    e.className=d?"tw":"lf";
+    e.style.left=Math.random()*100+"%";
+    e.style.fontSize=(14+Math.random()*16)+"px";
+    if(d){e.style.top=Math.random()*100+"%";e.style.animationDelay=(-Math.random()*3)+"s"}
+    else{e.style.animationDuration=(9+Math.random()*9)+"s";e.style.animationDelay=(-Math.random()*14)+"s"}
+    fx.appendChild(e);
+  }
+}
+function setTheme(h){
+  var b=document.body;
+  b.classList.remove("d1","d4","tips");
+  if(h!=="d1"&&h!=="d4"&&h!=="tips"){setFx(h==="d3");return}
+  cur=null;b.classList.remove("disney");b.classList.add(h);
+  fx.innerHTML="";
+  var f=h==="d1",s=f?["☁️","☁️","☁️","☁️","✈️"]:["🎁","🛍️","🍫","🎀","🍡"],n=f?10:18;
+  if(h==="tips")s=["🧳","🧣","🧤","🧥","🎒","📱"];
+  for(var i=0;i<n;i++){
+    var e=document.createElement("span"),du=f?14+Math.random()*14:9+Math.random()*9;
+    e.textContent=s[i%s.length];
+    e.className=f?"fly":"lf";
+    e.style.fontSize=(f?22+Math.random()*22:16+Math.random()*14)+"px";
+    if(f)e.style.top=Math.random()*70+"%";else e.style.left=Math.random()*100+"%";
+    e.style.animationDuration=du+"s";
+    e.style.animationDelay=(-Math.random()*du)+"s";
+    fx.appendChild(e);
+  }
+}
+document.querySelectorAll("#nav a").forEach(function(a){
+  a.addEventListener("click",function(ev){
+    ev.preventDefault();
+    var k=a.getAttribute("href").slice(1);
+    try{history.replaceState(null,"","#"+k)}catch(e){}
+    show(k);window.scrollTo(0,0);
+  });
+});
 window.addEventListener("hashchange",show);show();
 document.querySelectorAll("input[data-k]").forEach(function(c){
   try{c.checked=localStorage.getItem("tk-"+c.dataset.k)==="1"}catch(e){}
